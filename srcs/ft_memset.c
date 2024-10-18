@@ -6,11 +6,11 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:06:54 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/18 09:21:08 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:18:54 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

@@ -6,11 +6,11 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 18:01:01 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/18 09:21:04 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:18:52 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

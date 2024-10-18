@@ -6,11 +6,11 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:38:35 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/18 09:21:13 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:18:58 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 char	*ft_memchr(const void *s, int c, size_t n)
 {

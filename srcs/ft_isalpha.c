@@ -6,16 +6,16 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:23:31 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/18 09:21:23 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:49:39 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_isalpha(int a)
 {
 	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122))
-		return (1024);
+		return (1);
 	else
 		return (0);
 }

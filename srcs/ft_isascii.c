@@ -6,11 +6,11 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:11:09 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/18 09:21:22 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:19:03 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_isascii(int c)
 {

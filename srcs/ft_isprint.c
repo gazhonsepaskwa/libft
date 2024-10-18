@@ -6,16 +6,16 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:23:47 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/18 12:29:27 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:49:52 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
-		return (16384);
+		return (1);
 	else
 		return (0);
 }

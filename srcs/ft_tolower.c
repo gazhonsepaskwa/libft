@@ -6,11 +6,11 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 12:07:21 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/18 12:30:56 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:18:39 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_tolower(int c)
 {
