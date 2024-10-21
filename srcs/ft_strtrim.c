@@ -6,7 +6,7 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:42:56 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/18 14:18:41 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:40:16 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	}
 	trimend = ft_gettrimend(s1, set);
 	cpy = ft_calloc(ft_strlen(s1) - (trimstart + trimend) + 1, sizeof(char));
+	if (!cpy)
+		return (NULL);
 	i = 0;
 	while (i < ft_strlen(s1) - (trimstart + trimend))
 	{

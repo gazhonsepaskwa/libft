@@ -6,7 +6,7 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:28:31 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/18 14:18:35 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:32:51 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,26 +50,40 @@ static char	*malloc_word(const char *s, char c)
 	return (word);
 }
 
+static void	freeall(char **arr, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(arr[i]);
+		arr[i] = NULL;
+		i++;
+	}
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char	**result;
-	int		words;
 	int		i;
 	int		j;
 
-	words = count_words(s, c);
-	result = (char **)calloc((words + 1), sizeof(char *));
+	result = calloc((count_words(s, c) + 1), sizeof(char *));
 	if (!result)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (s[i] && j < words)
+	while (s[i] && j < count_words(s, c))
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 		{
 			result[j] = malloc_word(s + i, c);
 			if (!result[j])
-				return (NULL);
+			{
+				freeall(result, j);
+				return (result);
+			}
 			j++;
 		}
 		i++;

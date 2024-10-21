@@ -6,7 +6,7 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:36:46 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/18 14:18:59 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:00:00 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ static char	*ft_itoamem(long int n)
 		i++;
 	}
 	res = malloc(((i + 1) + sign + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
 	res[i + 1 + sign] = '\0';
 	ft_bpaszerro(res, ((i + 1) + sign) * sizeof(char));
 	return (res);
