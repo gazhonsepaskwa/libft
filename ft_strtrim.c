@@ -6,7 +6,7 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:42:56 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/22 09:28:19 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:19:04 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,25 +46,10 @@ static int	ft_gettrimend(const char *str, const char *set)
 	return (i);
 }
 
-char	*ft_strtrim(const char *s1, const char *set)
+static void	trloop(char *cpy, const char *s1, size_t trimstart, size_t trimend)
 {
-	char	*cpy;
-	size_t	trimstart;
-	size_t	trimend;
 	size_t	i;
 
-	cpy = (char *)s1;
-	trimstart = ft_gettrimstart(s1, set);
-	if (trimstart == ft_strlen(s1))
-	{
-		cpy = malloc(1);
-		cpy[0] = 0;
-		return (cpy);
-	}
-	trimend = ft_gettrimend(s1, set);
-	cpy = ft_calloc(ft_strlen(s1) - (trimstart + trimend) + 1, sizeof(char));
-	if (!cpy)
-		return (NULL);
 	i = 0;
 	while (i < ft_strlen(s1) - (trimstart + trimend))
 	{
@@ -72,5 +57,28 @@ char	*ft_strtrim(const char *s1, const char *set)
 		i++;
 	}
 	cpy[i] = 0;
+}
+
+char	*ft_strtrim(const char *s1, const char *set)
+{
+	char	*cpy;
+	size_t	trimstart;
+	size_t	trimend;
+
+	cpy = (char *)s1;
+	trimstart = ft_gettrimstart(s1, set);
+	if (trimstart == ft_strlen(s1))
+	{
+		cpy = malloc(1);
+		if (!cpy)
+			return (NULL);
+		cpy[0] = 0;
+		return (cpy);
+	}
+	trimend = ft_gettrimend(s1, set);
+	cpy = ft_calloc(ft_strlen(s1) - (trimstart + trimend) + 1, sizeof(char));
+	if (!cpy)
+		return (NULL);
+	trloop(cpy, s1, trimstart, trimend);
 	return (cpy);
 }
