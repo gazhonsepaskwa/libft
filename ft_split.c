@@ -6,7 +6,7 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:28:31 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/22 09:54:48 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:41:24 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,19 @@ static char	*malloc_word(const char *s, char c)
 	return (word);
 }
 
-static void	freeall(char **arr, int count)
+static void	freeall(char ***arr, int count)
 {
 	int	i;
 
 	i = 0;
 	while (i < count)
 	{
-		free(arr[i]);
-		arr[i] = NULL;
+		free(*(arr)[i]);
+		*(arr)[i] = NULL;
 		i++;
 	}
-	free(arr);
-	arr = (NULL);
+	free(*(arr));
+	*(arr) = (NULL);
 }
 
 char	**ft_split(const char *s, char c)
@@ -71,7 +71,7 @@ char	**ft_split(const char *s, char c)
 	int		i;
 	int		j;
 
-	result = calloc((count_words(s, c) + 1), sizeof(char *));
+	result = ft_calloc((count_words(s, c) + 1), sizeof(char *));
 	if (!result)
 		return (NULL);
 	i = 0;
@@ -83,8 +83,8 @@ char	**ft_split(const char *s, char c)
 			result[j] = malloc_word(s + i, c);
 			if (!result[j])
 			{
-				freeall(result, j);
-				return (result);
+				freeall(&result, j);
+				return (NULL);
 			}
 			j++;
 		}
