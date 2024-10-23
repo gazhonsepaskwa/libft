@@ -21,28 +21,45 @@ static int	ft_isspace(char c)
 		return (0);
 }
 
-int	ft_atoi(const char *str)
+static int ft_signer(char c, int *i)
 {
-	long long int	i;
-	long long int	sign;
-	long long int	res;
+  int sign;
 
-	res = 0;
-	sign = 1;
-	i = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-')
+  sign = 1;
+	if (c == '-')
 	{
 		sign *= -1;
-		i++;
+		(*i)++;
 	}
-	else if (str[i] == '+')
+	else if (c == '+')
+		(*i)++;
+  return (sign);
+}
+
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	sign;
+  int	res;
+  int count;
+
+	res = 0;
+	i = 0;
+  sign = ft_signer(str[i], &i);
+	while (ft_isspace(str[i]))
 		i++;
+  while (str[i] == '0')
+    i++;
 	while (ft_isdigit(str[i]))
 	{
 		res = (res * 10) + (str[i] - '0');
+    count++;
 		i++;
+    if (count > 18 && sign == 1)
+      return -1;
+    if (count > 18 && sign == -1)
+      return 0;
 	}
 	return (res *= sign);
 }
+
