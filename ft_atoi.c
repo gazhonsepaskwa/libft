@@ -6,7 +6,7 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:00:41 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/22 16:24:58 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:03:15 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ static int	ft_isspace(char c)
 		return (0);
 }
 
-static int ft_signer(char c, int *i)
+static int	ft_signer(char c, int *i)
 {
-  int sign;
+	int	sign;
 
-  sign = 1;
+	sign = 1;
 	if (c == '-')
 	{
 		sign *= -1;
@@ -33,33 +33,33 @@ static int ft_signer(char c, int *i)
 	}
 	else if (c == '+')
 		(*i)++;
-  return (sign);
+	return (sign);
 }
 
 int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
-  int	res;
-  int count;
+	int	res;
+	int	count;
 
+	count = 0;
 	res = 0;
 	i = 0;
-  sign = ft_signer(str[i], &i);
 	while (ft_isspace(str[i]))
 		i++;
-  while (str[i] == '0')
-    i++;
+	sign = ft_signer(str[i], &i);
+	while (str[i] == '0')
+		i++;
 	while (ft_isdigit(str[i]))
 	{
 		res = (res * 10) + (str[i] - '0');
-    count++;
+		count++;
 		i++;
-    if (count > 18 && sign == 1)
-      return -1;
-    if (count > 18 && sign == -1)
-      return 0;
 	}
+	if (count > 18 && sign == 1)
+		return (-1);
+	if (count > 18 && sign == -1)
+		return (0);
 	return (res *= sign);
 }
-

@@ -6,7 +6,7 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 09:06:01 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/22 09:28:16 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:11:07 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strchr(const char *s, int c)
 
 	ch = c;
 	i = 0;
-	if (!s)
-		return (NULL);
 	if (ch == '\0')
 		return ((char *)&s[ft_strlen(s)]);
 	while (s[i] != 0)

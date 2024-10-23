@@ -6,7 +6,7 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 12:01:43 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/22 09:28:17 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:04:55 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
-	if (!s)
-		return (0);
 	i = 0;
 	while (s[i] != 0)
 		i++;
