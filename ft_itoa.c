@@ -6,24 +6,11 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:36:46 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/22 09:28:13 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/23 19:30:59 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static void	ft_bpaszerro(void *s, size_t n)
-{
-	unsigned char	*ps;
-	size_t			i;
-
-	if (n == 0)
-		return ;
-	ps = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-		ps[i++] = 48;
-}
 
 static char	*ft_itoamem(long int n)
 {
@@ -47,7 +34,7 @@ static char	*ft_itoamem(long int n)
 	if (!res)
 		return (NULL);
 	res[i + 1 + sign] = '\0';
-	ft_bpaszerro(res, ((i + 1) + sign) * sizeof(char));
+	ft_memset(res, 48, ((i + 1) + sign) * sizeof(char));
 	return (res);
 }
 
