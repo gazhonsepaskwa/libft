@@ -6,11 +6,12 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:00:41 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/23 15:03:15 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/24 18:26:42 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "limits.h"
 
 static int	ft_isspace(char c)
 {
@@ -36,14 +37,21 @@ static int	ft_signer(char c, int *i)
 	return (sign);
 }
 
+static int	ft_signed(int sign)
+{
+	if (sign == -1)
+		return (0);
+	else
+		return (-1);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	res;
-	int	count;
+	int		i;
+	int		sign;
+	long	res;
+	int		current_digit;
 
-	count = 0;
 	res = 0;
 	i = 0;
 	while (ft_isspace(str[i]))
@@ -53,13 +61,11 @@ int	ft_atoi(const char *str)
 		i++;
 	while (ft_isdigit(str[i]))
 	{
-		res = (res * 10) + (str[i] - '0');
-		count++;
+		current_digit = str[i] - '0';
+		if (res > (LONG_MAX - current_digit) / 10)
+			return (ft_signed(sign));
+		res = (res * 10) + current_digit;
 		i++;
 	}
-	if (count > 18 && sign == 1)
-		return (-1);
-	if (count > 18 && sign == -1)
-		return (0);
-	return (res *= sign);
+	return ((int)(res *= sign));
 }
