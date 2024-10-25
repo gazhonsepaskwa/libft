@@ -6,7 +6,7 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:38:35 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/23 15:14:38 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/10/25 09:49:55 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,9 @@ char	*ft_memchr(const void *s, int c, size_t n)
 	const unsigned char	*ps;
 
 	ps = (const unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
+	i = -1;
+	while (++i < n)
 		if (ps[i] == (unsigned char)c)
 			return ((char *)&ps[i]);
-		i++;
-	}
 	return (NULL);
 }
