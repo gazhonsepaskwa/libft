@@ -1,0 +1,14 @@
+// build folder
+build/
+
+// Library
+*.a
+
+// object file
+*.o
+
+// Other
+.DS_Store
+
+// pre make
+*.gch.h

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
+/*   By: aderison <aderison@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:14:32 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/10/25 09:24:00 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/11/11 18:34:04 by aderison         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	unsigned int	j;
 
 	if (!s1)
-		return ((char *)s2);
+		return (ft_strdup(s2));
 	if (!s2)
-		return ((char *)s1);
+		return (ft_strdup(s1));
 	out = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
 	if (!out)
 		return (NULL);
