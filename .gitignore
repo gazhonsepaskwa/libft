@@ -1,6 +1,6 @@
 obj
 **.out
 **.a
-**o
+**.o
 .DS_Store
 **gch.h
