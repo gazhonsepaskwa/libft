@@ -1,14 +1,6 @@
-// build folder
-build/
-
-// Library
-*.a
-
-// object file
-*.o
-
-// Other
+obj
+**.out
+**.a
+**o
 .DS_Store
-
-// pre make
-*.gch.h
+**gch.h

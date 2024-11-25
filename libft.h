@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aderison <aderison@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:33:28 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/11/16 14:47:46 by aderison         ###   ########.fr       */
+/*   Updated: 2024/11/25 16:41:07 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdarg.h>
+
+# include "colors.h"
+# include "general.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -58,5 +62,17 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+int		ft_put_ui_base(unsigned int nbr, char *base);
+int		ft_put_uli_base(unsigned long int nbr, char *base);
+int		ft_put_c(char c);
+int		ft_put_s(char *s);
+int		ft_put_i(int n);
+int		ft_put_ui(unsigned int n);
+
+int		ft_printf(const char *fstr, ...);
+int		ft_debug(const char *fstr, ...);
+
+void	ft_free(char **p);
+void	ft_free_v(void **p);
 
 #endif
