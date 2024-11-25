@@ -6,7 +6,7 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:14:32 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/11/11 18:34:04 by aderison         ###   ########.fr       */
+/*   Updated: 2024/11/16 14:21:55 by aderison         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	unsigned int	i;
 	unsigned int	j;
 
+	if (!s1 && !s2)
+		return (NULL);
 	if (!s1)
 		return (ft_strdup(s2));
 	if (!s2)
