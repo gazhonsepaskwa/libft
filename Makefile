@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nalebrun <nalebrun@student.s19.be>          +#+  +:+       +#+         #
+#    By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 14:22:51 by nalebrun          #+#    #+#              #
-#    Updated: 2024/11/25 18:30:00 by nalebrun         ###   ########.fr        #
+#    Updated: 2024/11/27 12:57:42 by nalebrun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ NAME = libft.a
 SRCS = $(shell find $(SRCDIR) -name "*.c")
 OBJS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))
 
-# Phony targets
 .PHONY: all clean fclean re
 
 # Default target
@@ -42,6 +41,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
+#clean
 clean:
 	@rm -rf $(OBJDIR)
 	@echo "Object files removed."

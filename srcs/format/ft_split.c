@@ -6,11 +6,11 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:15:47 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/11/25 10:51:20 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/11/27 12:58:41 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
 int	ft_word_count(const char *str, char c)
 {

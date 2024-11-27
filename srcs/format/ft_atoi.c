@@ -6,11 +6,11 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:00:41 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/11/25 15:27:40 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/11/27 12:59:01 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
 static int	ft_isspace(char c)
 {

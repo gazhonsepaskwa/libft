@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 15:43:37 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/11/27 13:34:36 by nalebrun         ###   ########.fr       */
+/*   Created: 2024/10/12 12:01:30 by nalebrun          #+#    #+#             */
+/*   Updated: 2024/11/27 12:58:24 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-void	ft_free(char **p)
+int	ft_toupper(int c)
 {
-	if (p && *p)
-	{
-		free(*p);
-		*p = NULL;
-	}
-}
-
-void	ft_free_v(void **p)
-{
-	if (p && *p)
-	{
-		free(*p);
-		*p = NULL;
-	}
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	else
+		return (c);
 }

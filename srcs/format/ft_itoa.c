@@ -6,11 +6,11 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:36:46 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/11/25 10:51:16 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/11/27 12:59:05 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../libft.h"
 
 static char	*ft_itoamem(long int n)
 {

@@ -6,12 +6,14 @@
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 10:33:28 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/11/25 16:41:07 by nalebrun         ###   ########.fr       */
+/*   Updated: 2024/11/27 12:20:56 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define BUFFER_SIZE 1
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -71,6 +73,8 @@ int		ft_put_ui(unsigned int n);
 
 int		ft_printf(const char *fstr, ...);
 int		ft_debug(const char *fstr, ...);
+
+char	*get_next_line(int fd);
 
 void	ft_free(char **p);
 void	ft_free_v(void **p);

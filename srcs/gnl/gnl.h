@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   gnl.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/12 12:01:30 by nalebrun          #+#    #+#             */
-/*   Updated: 2024/11/25 10:51:25 by nalebrun         ###   ########.fr       */
+/*   Created: 2024/11/27 12:46:20 by nalebrun          #+#    #+#             */
+/*   Updated: 2024/11/27 12:53:23 by nalebrun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#ifndef GNL_H
+# define GNL_H
 
-int	ft_toupper(int c)
-{
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	else
-		return (c);
-}
+# include "../../libft.h"
+
+size_t	ft_gstrlen(const char *str, int j);
+char	*ft_strichr(const char *s, int c, int i);
+
+#endif
