@@ -12,7 +12,7 @@
 
 #include "../../libft.h"
 
-int	ft_word_count(const char *str, char c)
+static int	ft_word_count(const char *str, char c)
 {
 	int	count;
 
@@ -31,7 +31,7 @@ int	ft_word_count(const char *str, char c)
 	return (count);
 }
 
-char	*malloccpy(const char *str, char c)
+static char	*malloccpy(const char *str, char c)
 {
 	char	*result;
 	int		i;

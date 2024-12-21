@@ -59,6 +59,7 @@ void	*ft_calloc(size_t count, size_t size);
 void	ft_bzero(void *s, size_t n);
 
 char	**ft_split(const char *s, char c);
+void	free_tab(char **tab);
 
 void	ft_put_c_fd(char c, int fd);
 void	ft_put_s_fd(char *s, int fd);
