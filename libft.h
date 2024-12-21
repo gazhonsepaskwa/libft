@@ -60,16 +60,17 @@ void	ft_bzero(void *s, size_t n);
 
 char	**ft_split(const char *s, char c);
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
+void	ft_put_c_fd(char c, int fd);
+void	ft_put_s_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+void	ft_put_i_fd(int n, int fd);
 int		ft_put_ui_base(unsigned int nbr, char *base);
 int		ft_put_uli_base(unsigned long int nbr, char *base);
 int		ft_put_c(char c);
 int		ft_put_s(char *s);
 int		ft_put_i(int n);
 int		ft_put_ui(unsigned int n);
+void	ft_error(char *e);
 
 int		ft_printf(const char *fstr, ...);
 int		ft_debug(const char *fstr, ...);

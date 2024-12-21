@@ -26,6 +26,9 @@ NAME = libft.a
 SRCS = $(shell find $(SRCDIR) -name "*.c")
 OBJS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))
 
+YELLOW = \033[33m
+RESET = \033[0m
+
 .PHONY: all clean fclean re
 
 # Default target
@@ -34,7 +37,7 @@ all: $(NAME)
 # Create the library
 $(NAME): $(OBJS)
 	@ar rcs $@ $^
-	@echo "Library $(NAME) created."
+	@echo "$(YELLOW)[LIBFT] Library $(NAME) created$(RESET)"
 
 # obj
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
@@ -44,10 +47,10 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 #clean
 clean:
 	@rm -rf $(OBJDIR)
-	@echo "Object files removed."
+	@echo "$(YELLOW)[LIBFT] Object files removed$(RESET)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "Cleaned all generated files."
+	@echo "$(YELLOW)[LIBFT] Lib removed$(RESET)"
 
 re: fclean all

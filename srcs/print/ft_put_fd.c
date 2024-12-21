@@ -45,3 +45,10 @@ void	ft_put_c_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+
+void	ft_error(char *e)
+{
+	ft_put_s_fd(RED, 2);
+	ft_put_s_fd(e, 2);
+	ft_put_s_fd(RESET, 2);
+}
